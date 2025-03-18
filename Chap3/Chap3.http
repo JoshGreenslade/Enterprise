@@ -1,0 +1,6 @@
+@Chap3_HostAddress = http://localhost:5196
+
+GET {{Chap3_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
