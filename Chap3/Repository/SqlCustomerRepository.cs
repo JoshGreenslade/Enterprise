@@ -15,6 +15,7 @@ public class SqlCustomerRepository : ICustomerRepository
     public async Task<Customer> AddAsync(Customer customer)
     {
         await _db.Customers.AddAsync(customer);
+        await _db.SaveChangesAsync();
         return customer;
     }
 

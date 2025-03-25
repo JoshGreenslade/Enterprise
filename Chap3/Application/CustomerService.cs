@@ -14,7 +14,7 @@ public class CustomerService
 
     public async Task<Customer> AddNewCustomerAsync(string name)
     {
-        var customer = new Customer { Id = (int)new Random().NextInt64(), Name = name };
+        var customer = new Customer { Name = name };
         await _customerRepository.AddAsync(customer);
         return customer;
     }
