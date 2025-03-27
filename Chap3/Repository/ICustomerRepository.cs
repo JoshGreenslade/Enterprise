@@ -1,5 +1,4 @@
 using Chap3.Domain;
-using Microsoft.EntityFrameworkCore;
 
 namespace Chap3.Repositories;
 

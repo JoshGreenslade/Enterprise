@@ -27,6 +27,7 @@ public class AppDbContext : DbContext
             order.OwnsMany(o => o.OrderItems, oi =>
             {
                 oi.WithOwner().HasForeignKey("OrderId");
+                oi.Property<int>("Id");
                 oi.HasKey("Id");
 
                 oi.HasOne<Product>()
