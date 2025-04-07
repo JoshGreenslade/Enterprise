@@ -32,9 +32,14 @@ public class SqlOrderRepository : IOrderRepository
         if (existingOrder == null) return null;
 
         existingOrder.CustomerId = order.CustomerId;
-        existingOrder.OrderItems = order.OrderItems;
+        // existingOrder._orderItems = order.OrderItems;
 
         return existingOrder;
 
+    }
+
+    public async Task<List<Order>> GetOrdersForCustomer(int customerId)
+    {
+        return await _db.Orders.Where(o => o.CustomerId == customerId).ToListAsync();
     }
 }

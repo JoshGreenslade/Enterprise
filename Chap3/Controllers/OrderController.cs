@@ -23,6 +23,13 @@ public class OrderController : Controller
         return Ok(order);
     }
 
+    [HttpGet]
+    public async Task<IActionResult> GetOrders([FromQuery] int customerId)
+    {
+        var orders = await _orderService.GetOrdersForCustomerAsync(customerId);
+        return Ok(orders);
+    }
+
 
 }
 

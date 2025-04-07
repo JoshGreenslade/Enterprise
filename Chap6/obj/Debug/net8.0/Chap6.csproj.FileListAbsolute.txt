@@ -1,0 +1,6 @@
+/home/josh/Tutorial/Architecture/Enterprise/Chap6/obj/Debug/net8.0/Chap6.GeneratedMSBuildEditorConfig.editorconfig
+/home/josh/Tutorial/Architecture/Enterprise/Chap6/obj/Debug/net8.0/Chap6.AssemblyInfoInputs.cache
+/home/josh/Tutorial/Architecture/Enterprise/Chap6/obj/Debug/net8.0/Chap6.AssemblyInfo.cs
+/home/josh/Tutorial/Architecture/Enterprise/Chap6/obj/Debug/net8.0/Chap6.csproj.CoreCompileInputs.cache
+/home/josh/Tutorial/Architecture/Enterprise/Chap6/obj/Debug/net8.0/Chap6.MvcApplicationPartsAssemblyInfo.cache
+/home/josh/Tutorial/Architecture/Enterprise/Chap6/obj/Debug/net8.0/Chap6.sourcelink.json
