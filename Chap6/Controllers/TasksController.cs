@@ -7,9 +7,9 @@ namespace Chap6.Controllers;
 public class TasksController : Controller
 {
 
-    private readonly ITasksService _tasksService;
+    private readonly TasksService _tasksService;
 
-    public TasksController(ITasksService tasksService)
+    public TasksController(TasksService tasksService)
     {
         _tasksService = tasksService;
     }
