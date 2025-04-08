@@ -1,3 +1,4 @@
+/home/josh/Tutorial/Architecture/Enterprise/Chap6/obj/Debug/net8.0/Chap6.csproj.AssemblyReference.cache
 /home/josh/Tutorial/Architecture/Enterprise/Chap6/obj/Debug/net8.0/Chap6.GeneratedMSBuildEditorConfig.editorconfig
 /home/josh/Tutorial/Architecture/Enterprise/Chap6/obj/Debug/net8.0/Chap6.AssemblyInfoInputs.cache
 /home/josh/Tutorial/Architecture/Enterprise/Chap6/obj/Debug/net8.0/Chap6.AssemblyInfo.cs

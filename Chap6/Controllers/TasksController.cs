@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Chap6.Models;
+using Chap6.Domain;
 
 namespace Chap6.Controllers;
 
@@ -15,15 +16,19 @@ public class TasksController : Controller
     }
 
     [HttpGet("")]
-    public ActionResult<List<UserTask>> GetTasks()
+    public ActionResult<List<TaskListDto>> GetTasks()
     {
-        return _tasksService.GetAllTasks();
+        var result = _tasksService.GetAllTasks();
+        if (!result.IsSuccess)
+            return BadRequest();
+        var data = result.Data!;
+        return data;
     }
 
     [HttpGet("{taskId:Guid}")]
-    public ActionResult<UserTask> GetTask([FromRoute] Guid taskId)
+    public ActionResult<TaskDetailDto> GetTask([FromRoute] Guid taskId)
     {
-        var task = _tasksService.GetTask(taskId);
+        var task = _tasksService.GetTaskById(taskId);
         if (task == null) return NotFound();
         return Ok(task);
     }
@@ -31,7 +36,16 @@ public class TasksController : Controller
     [HttpPost("")]
     public ActionResult<UserTask> AddNewTask([FromBody] CreateTaskRequestDto newTask)
     {
-        var createdTask = _tasksService.AddNewTask(newTask);
+        var createNewTask = new CreateNewTaskCommandDto
+        {
+            TaskName = newTask.TaskName,
+            DueDate = newTask.DueDate,
+            IsComplete = newTask.IsComplete
+        };
+        var result = _tasksService.AddNewTask(createNewTask);
+        if (!result.IsSuccess)
+            return BadRequest(result.ErrorMessage);
+        var createdTask = result.Data!;
         return CreatedAtAction(nameof(GetTask), new { taskId = createdTask.Id }, createdTask);
     }
 }

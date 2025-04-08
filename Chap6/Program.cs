@@ -1,7 +1,10 @@
+using Chap6.Domain;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
+builder.Services.AddScoped<TasksService>();
 
 var app = builder.Build();
 
