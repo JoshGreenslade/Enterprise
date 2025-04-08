@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Chap6.Models;
 
 namespace Chap6.Controllers;
 
